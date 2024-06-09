@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from "react-router-dom";
 
 export default function Header(props) {
   let HeaderStyle = {
@@ -18,16 +19,16 @@ export default function Header(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+              <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">About</a>
+              <Link className="nav-link" to="/about">About</Link>
             </li>
           </ul>
-          {props.searchBar? <form className="form-inline my-2 my-lg-0">
+          {props.searchBar ? <form className="form-inline my-2 my-lg-0">
             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form> : "" }
+          </form> : ""}
         </div>
       </nav>
     </div>
@@ -36,7 +37,7 @@ export default function Header(props) {
 
 Header.defaultProps = {
   title: "Your Title Here..",
-  searchBar: true 
+  searchBar: true
 }
 
 Header.propTypes = {
